@@ -1,0 +1,63 @@
+body { background-color: #fff; }
+
+table {
+  width: 800px;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+table th, table td {
+  border: 1px solid #000;
+  width: 25%;
+}
+
+table th[colspan="2"], table td[colspan="2"] {
+  width: 50%;
+}
+
+thead th {
+  background-color: #ddd;
+}
+
+tbody th {
+  font-style: italic;
+}
+
+table tr.last {
+  background-color: #aaa;
+}
+
+form {
+  margin-top: 1rem;
+}
+
+form > div {
+  margin-top: 1rem;
+}
+
+form > div.input-group {
+  display: flex;
+}
+
+form label {
+  width: 100px;
+}
+
+form input[type="text"] {
+  width: 300px;
+}
+
+.pl-4 {
+  padding-left: 1.5rem;
+}
+
+.button-group {
+  margin-top: .5rem;
+}
+
+button {
+  padding: .25rem .5rem;
+  margin-right: 1rem;
+  background-color: #fff;
+  border: 1px solid #000;
+}

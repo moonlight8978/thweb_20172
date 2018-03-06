@@ -1,0 +1,9 @@
+::-webkit-scrollbar {
+  background-color: silver;
+}
+::-webkit-scrollbar-button       {
+  background-color: black;
+}
+::-webkit-scrollbar-track        {
+  background-color: yellow;
+}
