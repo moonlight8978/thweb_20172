@@ -1,0 +1,26 @@
+.wrapper {
+  width: 400px;
+}
+
+.header {
+  text-align: center;
+  font-size: 2rem;
+  font-family: cursive;
+  text-transform: uppercase;
+  color: brown;
+  background-color: #c49121;
+}
+
+table {
+  width: 100%;
+  padding: 10px;
+  background-color: #f9dea2;
+}
+
+td[colspan="3"] {
+  text-align: center;
+}
+
+input[disabled] {
+  background-color: #eaa9f2;
+}

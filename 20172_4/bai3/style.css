@@ -1,0 +1,16 @@
+h3, h4 {
+  text-align: center;
+  color: blue;
+}
+
+table {
+  margin: auto;
+}
+
+table tr td:first-child {
+  color: blue;
+}
+
+table tr:first-child td {
+  color: orange;
+}
