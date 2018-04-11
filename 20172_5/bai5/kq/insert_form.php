@@ -21,6 +21,17 @@
   </script>
 </head>
 <body>
+  <?php
+    $host = 'localhost';
+    $username = 'root';
+    $password = '';
+    $db = 'qlsinhvien';
+
+    $connector = new mysqli($host, $username, $password, $db);
+    $connector->set_charset("utf8");
+    $MaSVs = $connector->query("SELECT MaSV FROM sinhvien");
+    $MaMHs = $connector->query("SELECT MaMH FROM monhoc");
+  ?>
   <table>
     <form name="frmPHP" method="post" action="insert_action.php" onsubmit="return checkInput();">
       <tr>
@@ -32,14 +43,30 @@
       <tr>
         <td align="left" >MaSV:</td>
         <td align="left">
-          <input type="text" name="MaSV" size="25" maxlength="6" class="textbox">
+          <select name="MaSV">
+            <?php
+              while ($row = $MaSVs->fetch_assoc()) {
+              ?>
+              <option value="<?= $row['MaSV'] ?>"><?= $row['MaSV'] ?></option>
+              <?php
+              }
+            ?>
+          </select>
         </td>
       </tr>
 
       <tr>
         <td align="left">MaMH:</td>
         <td align="left">
-          <input type="text" name="MaMH" size="25" maxlength="50" class="textbox">
+          <select name="MaMH">
+            <?php
+              while ($row = $MaMHs->fetch_assoc()) {
+              ?>
+              <option value="<?= $row['MaMH'] ?>"><?= $row['MaMH'] ?></option>
+              <?php
+              }
+            ?>
+          </select>
         </td>
       </tr>
 
@@ -49,7 +76,7 @@
           <input type="text" name="Diem" size="25" maxlength="50" class="textbox">
         </td>
       </tr>
-      
+
       <tr>
         <td align="left" valign="top"><br>
           <input type="submit" value="Submit" class="button">

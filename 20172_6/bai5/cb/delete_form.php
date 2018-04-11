@@ -2,11 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>:: Quan ly sinh vien::</title>
+  <title>:: Quan ly can bo::</title>
   <script language=JavaScript>
     function checkInput() {
       const fields = [
-        'MaSV', 'MaMH'
+        'MaCB'
       ]
 
       let allPassed = fields.every(field => {
@@ -23,17 +23,6 @@
   </script>
 </head>
 <body>
-  <?php
-    $host = 'localhost';
-    $username = 'root';
-    $password = '';
-    $db = 'qlsinhvien';
-
-    $connector = new mysqli($host, $username, $password, $db);
-    $connector->set_charset("utf8");
-    $MaSVs = $connector->query("SELECT MaSV FROM sinhvien");
-    $MaMHs = $connector->query("SELECT MaMH FROM monhoc");
-  ?>
   <table>
     <form name="frmPHP" method="post" action="delete_action.php" onsubmit="return checkInput();">
       <tr>
@@ -43,32 +32,9 @@
       </tr>
 
       <tr>
-        <td align="left" >MaSV:</td>
+        <td align="left" >MaCB:</td>
         <td align="left">
-          <select name="MaSV">
-            <?php
-              while ($row = $MaSVs->fetch_assoc()) {
-              ?>
-              <option value="<?= $row['MaSV'] ?>"><?= $row['MaSV'] ?></option>
-              <?php
-              }
-            ?>
-          </select>
-        </td>
-      </tr>
-
-      <tr>
-        <td align="left" >MaMH:</td>
-        <td align="left">
-          <select name="MaMH">
-            <?php
-              while ($row = $MaMHs->fetch_assoc()) {
-              ?>
-              <option value="<?= $row['MaMH'] ?>"><?= $row['MaMH'] ?></option>
-              <?php
-              }
-            ?>
-          </select>
+          <input type="text" name="MaCB" size="25" maxlength="6" class="textbox">
         </td>
       </tr>
 
