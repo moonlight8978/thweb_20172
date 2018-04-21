@@ -1,7 +1,6 @@
 <?php
-session_start();
-session_register("name");
-$_SESSION["name"] = "Kenny Huy";
+  session_start();
+  $_SESSION["name"] = "Kenny Huy";
 ?>
 <html>
 <head>

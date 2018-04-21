@@ -12,7 +12,7 @@ session_start();
 unset($_SESSION["ma_nv"]); unset($_SESSION["tensv"]);
 ?>
 <script language="javascript">
-	window.open("Lab8.php","_self");
+	window.open("Lab9.php","_self");
 </script>
 </body>
 </html>

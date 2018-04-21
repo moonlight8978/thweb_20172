@@ -13,7 +13,7 @@
 </style>
 </head>
 <body>
-<form name="form1" method="post" action="Lab8.php">
+<form name="form1" method="post" action="Lab9.php">
 <table width="800" border="1" align="center">
 <tr>
 <td colspan="2"><div align="center">ĐĂNG NHẬP</div></td>
@@ -39,27 +39,26 @@
 </form>
 <hr  size="2" align="center" color="#000066" width="600">
 	<?php
-	if($_POST["Submit"]=="Dang nhap" && $_POST["username"])
+	if(!empty($_POST) && $_POST["Submit"]=="Dang nhap" && $_POST["id_nv"])
 	{
 		$id_nv = $_POST["id_nv"];
 		//Ket noi den MySQL
-$con=mysql_connect("localhost","root","123456") or die("Khong the ket noi den Server");
+    $con=mysqli_connect("localhost","root","") or die("Khong the ket noi den Server");
 		//Chon CSDL qlbanhang
-mysql_select_db("qlbanhang",$con) or die("khong ket noi CSDL duoc");
+    mysqli_select_db($con, "qlbanhang1") or die("khong ket noi CSDL duoc");
 		//Chon bang ma la unicode utf-8
-		mysql_query("set names 'utf8'");
+		mysqli_set_charset($con, "utf8");
 		//Thuc hien cau truy van
-$query="select * from nhanvien where id_nv='" . $_POST["username"] . "' And password='" . $_POST["password"] . "'";
-		$result=mysql_query($query,$con);
+    $query="select * from nhanvien where id_nv='{$_POST['id_nv']}' And password='{$_POST['password']}'";
 
-		if(mysql_num_rows($result)>0)
+		$result=mysqli_query($con, $query);
+
+		if(mysqli_num_rows($result)>0)
 		{
 			//Dang nhap thanh cong luu ten nhân viên vao session
-			$row = mysql_fetch_row($result);
+			$row = mysqli_fetch_assoc($result);
 			$tensv=$row["tennv"];
-			session_register("id_nv");
-			session_register("tennv");
-			$_SESSION["id_nv"]=$id_nv
+			$_SESSION["id_nv"]=$id_nv;
 			$_SESSION["tennv"]=$tennv;
 			header("Location:Lab9_1.php");
 		}
@@ -67,7 +66,7 @@ $query="select * from nhanvien where id_nv='" . $_POST["username"] . "' And pass
 		{
 		echo "<div align=center >Đăng nhập không thành công!<div>";
 		}
-		mysql_close($con);
+		mysqli_close($con);
 	}
 ?>
 </body>
