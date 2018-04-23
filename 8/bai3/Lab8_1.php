@@ -33,6 +33,7 @@ session_start();
         <a href="#"><div id="ht" name="b"></div></a>
         <div align="center">
           <input type="button" name="Button" value="Xem thông tin cá nhân" onClick="javascript:window.open('Lab8_2.php','_self')">
+          <input type="button" name="Button" value="Xem bảng điểm" onClick="javascript:window.open('Lab8_4.php','_self')">
           <input type="button" name="Button" value="Đăng xuất" onClick="javascript:window.open('Lab8_3.php','_self')">
         </div>
       </form></td>
@@ -41,6 +42,7 @@ session_start();
       <td height="346">&nbsp;</td>
     </tr>
   </table>
+  <h4>Lê Sĩ Bích - 20155125</h4>
 </body>
 </html>
 <?php ob_flush(); ?>

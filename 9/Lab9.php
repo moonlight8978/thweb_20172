@@ -69,6 +69,7 @@
 		mysqli_close($con);
 	}
 ?>
+<h4>Lê Sĩ Bích - 20155125</h4>
 </body>
 </html>
 <?php ob_flush(); ?>

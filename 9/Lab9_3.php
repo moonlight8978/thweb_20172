@@ -14,6 +14,7 @@ unset($_SESSION["ma_nv"]); unset($_SESSION["tensv"]);
 <script language="javascript">
 	window.open("Lab9.php","_self");
 </script>
+<h4>Lê Sĩ Bích - 20155125</h4>
 </body>
 </html>
 <?php ob_flush(); ?>

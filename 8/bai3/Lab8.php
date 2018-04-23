@@ -56,10 +56,10 @@ session_start();
     if(mysqli_num_rows($result)>0)
     {
       //Dang nhap thanh cong luu ten sinh vien vao session
-      $row = mysqli_fetch_row($result);
-      $tensv=$row["TenSV"];
-      $_SESSION["username"]=$username;
-      $_SESSION["tensv"]=$tensv;
+      $row = mysqli_fetch_assoc($result);
+      $tensv = $row["TenSV"];
+      $_SESSION["username"] = $username;
+      $_SESSION["tensv"] = $tensv;
       header("Location:Lab8_1.php");
     }
     else
@@ -69,6 +69,7 @@ session_start();
     mysqli_close($con);
   }
   ?>
+  <h4>Lê Sĩ Bích - 20155125</h4>
   </body>
 </html>
 <?php ob_flush(); ?>
